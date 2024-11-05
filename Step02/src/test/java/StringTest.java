@@ -1,7 +1,6 @@
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.fail;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class StringTest {
 
@@ -22,5 +21,25 @@ public class StringTest {
         int actualLength = "ABCDE".length();
         int expectedLength = 4;
         assertEquals(actualLength,expectedLength);
+    }
+
+    @Test
+    void toUpperCasePassTest(){
+        String str = "abcd";
+        String result = str.toUpperCase();
+
+        assertNotNull(result);
+        // assertNull(result);
+        assertEquals("ABCD",result);
+    }
+
+    //to assert booleans
+    @Test
+    void containsPass(){
+        String str = "abcdefgh";
+        boolean result = str.contains("ijk");
+
+        //assertEquals(false, result);
+        assertFalse(result);
     }
 }
